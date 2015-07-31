@@ -1,7 +1,7 @@
 #pragma once
 #ifndef IRCCONNECTION
 #define IRCCONNECTION
-#define DEFAULT_BUFFER 40960
+#define DEFAULT_BUFFER 40960 //buffer overflow exploit????
 #include <string>
 #include <WinSock2.h>
 #include <windows.h>
