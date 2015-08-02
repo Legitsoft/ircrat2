@@ -72,7 +72,18 @@ void IrcConnection::read()
 			break;
 		}
 		receive_buffer[ret] = '\0';
-		callback(receive_buffer);
+
+		//convert to string and parse individual messages
+		string chunk = receive_buffer;
+		vector<string> messages;
+		boost::split(messages, chunk, boost::is_any_of("\r\n"));
+
+		for (size_t i = 0; i < messages.size(); i++) {
+			if (messages[i] != "") {
+				callback(messages[i]);
+			}
+			
+		}
 	}
 	closesocket(client);
 }

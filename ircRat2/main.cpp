@@ -40,7 +40,5 @@ int main()
 {
 	thread ircthread(initialize);
 	ircthread.join();
-	string lol;
-	cin >> lol;
 	return 0;
 }

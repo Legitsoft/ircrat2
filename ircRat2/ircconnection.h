@@ -7,6 +7,8 @@
 #include <windows.h>
 #include <stdio.h>
 #include <iostream>
+#include <boost\algorithm\string.hpp>
+#include <vector>
 using namespace std;
 
 class IrcConnection {
